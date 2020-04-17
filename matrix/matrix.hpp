@@ -100,19 +100,6 @@ public:
     return size_;
   }
 
-  friend std::ostream& operator<<(std::ostream& stream, MatrixSym& matrix) {
-    std::size_t size = matrix.GetSize();
-
-    for (int i = 1; i <= size; i++) {
-      for (int j = 1; j <= size; j++)
-        stream << std::setw(5) << std::left << std::setprecision(3) << matrix(i, j) << " ";
-
-      stream << std::endl;
-    }
-
-    return stream;
-  }
-
 private:
   std::size_t size_;
   int*        buf_;
